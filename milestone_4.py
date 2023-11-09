@@ -7,9 +7,22 @@ word = random.choice(word_list)
 
 #class name
 class Hangman: 
+    """ 
+    This class is the hangman game.
+
+    Attributes:
+     word_list (list): A list of words which the random word is chosen from.
+     num_lives (int): The number of lives the player has at the start of the game.
+     word (str): The word to be guessed, picked randomly from the word_list.
+     num_letters (int): The number of UNIQUE letters in the word that have not been guessed yet.
+     word_guessed (list): A list of the letters of the word, with _ for each letter not yet guessed. 
+     list_of_guesses (list): A list of the guesses that have already been tried. Set this to an empty list initially.
+    """
    
     #class constructor
     def __init__ (self, word_list, num_lives=5):
+        """ This function inititialises the attributes within the class"""
+        
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = random.choice(word_list)
@@ -18,6 +31,7 @@ class Hangman:
         self.list_of_guesses = []
         
     def check_guess(self,guess):
+     """ This function checks if the user guess is in the random word chosen and updates users lives depdening on if they are correct or not  """
      guess = guess.lower()
      if guess in self.word:
       print(f"Good guess! '{guess}' is in the word.")
@@ -32,6 +46,12 @@ class Hangman:
         
     
     def ask_for_input(self):
+     """ 
+     This asks the user for an input.
+
+     If the input is not a single aplhabet leter or has already been guessed it will continue to run.
+     It appends the list of guesses with each new valid input.
+     """
      while True:
      # asks user for input 
       guess = input("Enter a single letter: ")
@@ -47,4 +67,5 @@ class Hangman:
          self.check_guess(guess)
 
 
-Hangman(word_list).ask_for_input()
+hangman_instance = Hangman(word_list)
+hangman_instance.ask_for_input()
