@@ -1,12 +1,5 @@
 import random
 
-# list of words to be chosen from
-word_list = [ "Raspberry", "strawberry", "Mango", "Passionfruit", "Orange" ]
-# randomly selects a word from the word_list
-word = random.choice(word_list)
-
-
-
 #class name
 class Hangman: 
     """ 
@@ -27,11 +20,12 @@ class Hangman:
         
         self.word_list = word_list
         self.num_lives = num_lives
-        self.word = random.choice(word_list)
+        self.word = random.choice(word_list).lower()
         self.num_letters = len(self.word)
         self.word_guessed = ['_'] * len(self.word)
         self.list_of_guesses = []
         
+
     def check_guess(self,guess):
      """ This function checks if the user guess is in the random word chosen and updates users lives depdening on if they are correct or not  """
      guess = guess.lower()
@@ -46,10 +40,10 @@ class Hangman:
       print(f"Sorry, '{guess}' is not in the word. Try again.")
       print(f"You have {self.num_lives} lives left.")
 
-    
+
     def ask_for_input(self):
      """ 
-     This asks the user for an input.
+     This function asks the user for an input.
 
      If the input is not a single aplhabet leter or has already been guessed it will continue to run.
      It appends the list of guesses with each new valid input.
@@ -68,13 +62,13 @@ class Hangman:
          self.list_of_guesses.append(guess)
          self.check_guess(guess)
          break
-         
 
 
-   
 def play_game(word_list):
- num_lives = 5
- game = Hangman(word_list, num_lives)
+ """
+ This function prints whether or not the user has guessed the word in the 5 lives with the end game result. 
+ """
+ game = Hangman(word_list, num_lives = 5)
 
  while True:
      if game.num_lives == 0:
@@ -86,5 +80,7 @@ def play_game(word_list):
       print("Congratulations. You won the game!")
       break
 
-
+if __name__ == '__main__':
+ """ Executed when run directly instead but not when imported as module"""
+word_list = [ "Raspberry", "Strawberry", "Mango", "Passionfruit", "Orange" ]
 play_game(word_list)
