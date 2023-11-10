@@ -6,7 +6,7 @@
 2. [Installation instructions](#Installationinstructions)
 3. [Usage instructions](#Usageinstructions)
 4. [File structure of the project](#Filestructureoftheproject)
-5. [License information](#Licenseinformation)
+
 
 ## Description
 Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
@@ -15,7 +15,7 @@ Hangman is a classic game in which a player thinks of a word and the other playe
 - The motivation of the project was to create an interactive game for users to engage with using ***python*** and **moving work from a local repo to GitHub and vice versa**.
 - I have learned a lot about the ***use of commits*** and how important they are at each stage of the project to be able to identify potential flaws in code that may affect future code development. I also developed my knowledge on ***the use of classes*** and using ***functions*** and ***methods*** within them.
 
-## Installation and usage instructions
+## Installation instructions
 
 Clone this repository into a terminal using the below command:
 ```
@@ -23,12 +23,13 @@ git clone https://github.com/elliesgithub/hangman.git
 ```
 Continue to run the hangman game following the instructions given.
 
+## Usage instructions
 
 - A random word is selected from the word_list.
 - The user inputs a singular letter as a guess.
-- A response is given as to whether the guess was correct, incorrect or invalid.
-- The user has 5 lives and the game will run until they have either guessed all letters of the word or lives have ran out.
-- The game is over when either of these outcomes occur.
+- A response is given as to whether the guess was correct, incorrect, already guessedor invalid.
+- The user has 5 lives and the game will run until they have either guessed all letters of the word or lives have run out.
+- The game is over when either of these outcomes occurs.
 
 ## File structure of the project
 ```
@@ -42,4 +43,3 @@ Hangman/
 ├─ milestone_4.py
 ├─ milestone_5.py
 ```
-## License information
